@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <cstdint>
 #include "learning_engine_base.h"
 
 const char* PolicyString[] = {"EGreddy"};

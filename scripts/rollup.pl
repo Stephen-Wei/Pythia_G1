@@ -2,6 +2,7 @@
 
 use warnings;
 use Getopt::Long;
+use lib '../../scripts';
 use Trace;
 use Exp;
 use Metric;

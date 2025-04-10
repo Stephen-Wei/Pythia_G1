@@ -1,4 +1,5 @@
 #include "bakshalipour_framework.h"
+#include <cstdint>
 
 /**
 * A very simple and efficient hash function that:

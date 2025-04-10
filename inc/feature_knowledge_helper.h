@@ -2,6 +2,7 @@
 #define FEATURE_KNOWLEDGE_HELPER_H
 
 #include "util.h"
+#include <cstdint>
 
 #define DELTA_BITS 7
 

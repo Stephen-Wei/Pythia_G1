@@ -1,0 +1,7 @@
+NAME=nutch_phase0_core0
+TRACE=$(PYTHIA_HOME)/traces/nutch_phase0_core0.trace.xz
+KNOBS=--knob_cloudsuite=true --warmup_instructions=100000000 --simulation_instructions=150000000
+
+NAME=streaming_phase0_core1
+TRACE=$(PYTHIA_HOME)/traces/streaming_phase0_core1.trace.xz
+KNOBS=--knob_cloudsuite=true --warmup_instructions=100000000 --simulation_instructions=150000000

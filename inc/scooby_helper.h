@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <vector>
 #include "bitmap.h"
+#include <cstdint>
 
 using namespace std;
 

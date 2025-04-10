@@ -1,6 +1,6 @@
 #ifndef LEARNING_ENGINE_BASE_H
 #define LEARNING_ENGINE_BASE_H
-
+#include <cstdint>
 #include "prefetcher.h"
 
 #define MAX_ACTIONS 64
