@@ -1,30 +1,11 @@
 <p align="center">
-  <a href="https://github.com/CMU-SAFARI/Pythia">
-    <img src="logo.png" alt="Logo" width="424.8" height="120">
-  </a>
-  <h3 align="center">A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning
+  <h3 align="center">Context-Aware Dynamically Weighted Prefetcher
   </h3>
 </p>
-
-<p align="center">
-    <a href="https://github.com/CMU-SAFARI/Pythia/blob/master/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg">
-    </a>
-    <a href="https://github.com/CMU-SAFARI/Pythia/releases">
-        <img alt="GitHub release" src="https://img.shields.io/github/release/CMU-SAFARI/Pythia">
-    </a>
-    <a href="https://doi.org/10.5281/zenodo.5520125"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5520125.svg" alt="DOI"></a>
-</p>
-
-<!-- ## Update
-### Aug 13th, 2021
-It has been brought to our attention that the Ligra and PARSEC-2.1 traces required to evaluate the artifact are not correctly getting downloaded using the `download_traces.pl` script. For now, we ask the reader to download **all** Ligra and PARSEC-2.1 traces (~10 GB) by (1) clicking on the mega link (see [Section 5](https://github.com/CMU-SAFARI/Pythia#more-traces)), and (2) clicking on "Download as ZIP" option. We are working with megatools developer to resolve the issue soon.  -->
-
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#what-is-pythia">What is Pythia?</a></li>
-    <li><a href="#about-the-framework">About the Framework</a></li>
+	<li><a href="#what-is-Context-Aware-Dynamically-Weighted-Prefetcher">What is Context-Aware Dynamically Weighted Prefetcher?</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#preparing-traces">Preparing Traces</a></li>
@@ -39,41 +20,15 @@ It has been brought to our attention that the Ligra and PARSEC-2.1 traces requir
     </li>
     <li><a href="#hdl-implementation">HDL Implementation</a></li>
     <li><a href="#code-walkthrough">Code Walkthrough</a></li>
-    <li><a href="#citation">Citation</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#citation">Our Citation</a></li>
   </ol>
 </details>
 
-## What is Pythia?
+## What is Context-Aware Dynamically Weighted Prefetcher?
 
 > Pythia is a hardware-realizable, light-weight data prefetcher that uses reinforcement learning to generate accurate, timely, and system-aware prefetch requests. 
-
-Pythia formulates hardware prefetching as a reinforcement learning task. For every demand request, Pythia observes multiple different types of program context information to take a prefetch decision. For every prefetch decision, Pythia receives a numerical reward that evaluates prefetch quality under the current memory bandwidth utilization. Pythia uses this reward to reinforce the correlation between program context information and prefetch decision to generate highly accurate, timely, and system-aware prefetch requests in the future.
-
-Pythia is presetend at MICRO 2021.
-
-> _Rahul Bera, Konstantinos Kanellopoulos, Anant V. Nori, Taha Shahroodi, Sreenivas Subramoney, Onur Mutlu, "[Pythia: A Customizable Hardware Prefetching Framework Using Online Reinforcement Learning](https://arxiv.org/pdf/2109.12021.pdf)", In Proceedings of the 54th Annual IEEE/ACM International Symposium on Microarchitecture (MICRO), 2021_
-
-## About The Framework
-
-Pythia is implemented in [ChampSim simulator](https://github.com/ChampSim/ChampSim). We have significantly modified the prefetcher integration pipeline in ChampSim to add support to a wide range of prior prefetching proposals mentioned below:
-
-* Stride [Fu+, MICRO'92]
-* Streamer [Chen and Baer, IEEE TC'95]
-* SMS [Somogyi+, ISCA'06]
-* AMPM [Ishii+, ICS'09]
-* Sandbox [Pugsley+, HPCA'14]
-* BOP [Michaud, HPCA'16]
-* SPP [Kim+, MICRO'16]
-* Bingo [Bakshalipour+, HPCA'19]
-* SPP+PPF [Bhatia+, ISCA'19]
-* DSPatch [Bera+, MICRO'19]
-* MLOP [Shakerinava+, DPC-3'19]
-* IPCP [Pakalapati+, ISCA'20]
-
-Most of the  prefetchers (e.g., SPP [1], Bingo [2], IPCP [3]) reuse codes from [2nd]() and [3rd]() data prefetching championships (DPC). Others (e.g., AMPM [4], SMS [5]) are implemented from scratch and shows similar relative performance reported by previous works.
+In modern computing systems, the widening gap between processor speed and memory access latency creates a critical performance bottleneck, with hardware prefetching emerging as an essential technique to hide memory latency. While recent machine learning-based prefetchers like Pythia have shown promise by leveraging reinforcement learning (RL), they often struggle with dynamic workloads exhibiting irregular access patterns or phase transitions.
+Context-Aware Dynamically Weighted Prefetcher addresses these challenges, Our design introduces a two-level error tracking mechanism to detect execution phase changes and employs context vector matching to dynamically switch between stored weight sets, enabling rapid adaptation without retraining from scratch.
 
 ## Prerequisites
 
@@ -149,11 +104,21 @@ The infrastructure has been tested with the following system configuration:
 
 4. If the traces are downloaded in some other path, please change the full path in `experiments/MICRO21_1C.tlist` and `experiments/MICRO21_4C.tlist` accordingly.
 
-### More Traces
-* Our simulation infrastructure is completely compatible with all prior ChampSim traces used in CRC-2 and DPC-3. One can also convert the CVP-2 traces (courtesy of Qualcomm Datacenter Technologies) to ChampSim format using [the following converter](https://github.com/ChampSim/ChampSim/tree/master/cvp_tracer). The traces can be found in the follwing websites:
-     * CRC-2 traces: http://bit.ly/2t2nkUj
-     * DPC-3 traces: http://hpca23.cse.tamu.edu/champsim-traces/speccpu/
-     * CVP-2 traces: https://www.microarch.org/cvp1/cvp2/rules.html
+### Traces for this project
+* 605.mcf_s-472B.champsimtrace.xz
+* 607.cactuBSSN_s-2421B.champsimtrace.xz
+* 619.lbm_s-2677B.champsimtrace.xz
+* 620.omnetpp_s-141B.champsimtrace.xz
+* 621.wrf_s-6673B.champsimtrace.xz
+* 623.xalancbmk_s-10B.champsimtrace.xz
+* 628.pop2_s-17B.champsimtrace.xz
+* 649.fotonik3d_s-10881B.champsimtrace.xz
+* 654.roms_s-1007B.champsimtrace.xz
+* cassandra_phase0_core0.trace.xz
+* cloud9_phase5_core2.trace.xz
+* nutch_phase0_core0.trace.xz
+* streaming_phase0_core1.trace.xz
+
 
 ## Experimental Workflow
 Our experimental workflow consists of two stages: (1) launching experiments, and (2) rolling up statistics from experiment outputs.
@@ -166,15 +131,22 @@ Our experimental workflow consists of two stages: (1) launching experiments, and
       * `exp`: contains knobs of the experiements to run
 3. Create experiments as follows. _Please make sure the paths used in tlist and exp files are appropriate_.
    
-      ```bash
-      cd $PYTHIA_HOME/experiments/
-      perl ../scripts/create_jobfile.pl --exe $PYTHIA_HOME/bin/perceptron-multi-multi-no-ship-1core --tlist MICRO21_1C.tlist --exp MICRO21_1C.exp --local 1 > jobfile.sh
+      ```bash   
+	        cd $PYTHIA_HOME/experiments/
+			export PYTHIA_HOME=/home/Pythia
+			perl -I../scripts ../scripts/create_jobfile.pl \
+			  --exe $PYTHIA_HOME/bin/perceptron-multi-multi-no-ship-1core \
+			  --tlist my_traces.tlist \
+			  --exp MICRO21_1C_2.exp \
+			  --local 1 \
+			  > jobfile.sh
       ```
 
 4. Go to a run directory (or create one) inside `experiements` to launch runs in the following way:
       ```bash
-      cd experiments_1C
-      source ../jobfile.sh
+        cd experiments_1C
+		export PYTHIA_HOME=/home/Pythia
+		source ../jobfile.sh
       ```
 
 5. If you have [slurm](https://slurm.schedmd.com) support to launch multiple jobs in a compute cluster, please provide `--local 0` to `create_jobfile.pl`
@@ -188,8 +160,9 @@ Our experimental workflow consists of two stages: (1) launching experiments, and
 3. Rollup statistics as follows. _Please make sure the paths used in tlist and exp files are appropriate_.
    
       ```bash
-      cd experiements_1C/
-      perl ../../scripts/rollup.pl --tlist ../MICRO21_1C.tlist --exp ../MICRO21_1C.exp --mfile ../rollup_1C_base_config.mfile > rollup.csv
+		export PYTHIA_HOME=/home/Pythia
+		perl ../../scripts/rollup.pl --tlist ../my_traces.tlist  --exp ../MICRO21_1C_2.exp --mfile ../rollup_1C_base_config.mfile > rollup.csv
+
       ```
 
 4. Export the `rollup.csv` file in you favourite data processor (Python Pandas, Excel, Numbers, etc.) to gain insights.
@@ -212,8 +185,8 @@ We also implement Pythia in [Chisel HDL](https://www.chisel-lang.org) to faithfu
 * `inc/feature_knowledge.h` and `src/feature_knowldege.cc` define how to compute each program feature from the raw attributes of a deamand request. If you want to define your own feature, extend the enum `FeatureType` in `inc/feature_knowledge.h` and define its corresponding `process` function.
 * `inc/util.h` and `src/util.cc` contain all hashing functions used in our evaluation. Play around with them, as a better hash function can also provide performance benefits.
 
-## Citation
-If you use this framework, please cite the following paper:
+## Our Citation
+We finished this project mainly base on this paper 
 ```
 @inproceedings{bera2021,
   author = {Bera, Rahul and Kanellopoulos, Konstantinos and Nori, Anant V. and Shahroodi, Taha and Subramoney, Sreenivas and Mutlu, Onur},
@@ -223,13 +196,7 @@ If you use this framework, please cite the following paper:
 }
 ```
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Rahul Bera - write2bera@gmail.com
-
-## Acknowledgements
-We acklowledge support from SAFARI Research Group's industrial partners.
+Also based on the code work of the pythia authors
+```
+https://github.com/CMU-SAFARI/Pythia
+```
