@@ -10,7 +10,7 @@
     <li><a href="#installation">Installation</a></li>
     <li><a href="#preparing-traces">Preparing Traces</a></li>
     <ul>
-      <li><a href="#more-traces">More Traces</a></li>
+      <li><a href="#more-traces">Traces for this project</a></li>
     </ul>
     <li><a href="#experimental-workflow">Experimental Workflow</a></li>
       <ul>
@@ -20,7 +20,7 @@
     </li>
     <li><a href="#hdl-implementation">HDL Implementation</a></li>
     <li><a href="#code-walkthrough">Code Walkthrough</a></li>
-    <li><a href="#citation">Our Citation</a></li>
+    <li><a href="#our-citation">Our Citation</a></li>
   </ol>
 </details>
 
