@@ -18,5 +18,4 @@ runs/
 # Others  
 tracer/obj-intel64/
 tags
-*.out
 libbf/
