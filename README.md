@@ -24,7 +24,7 @@
   </ol>
 </details>
 
-## What is Context-Aware Dynamically Weighted Prefetcher?
+## What is the Context-Aware Dynamically Weighted Prefetcher?
 
 > Pythia is a hardware-realizable, light-weight data prefetcher that uses reinforcement learning to generate accurate, timely, and system-aware prefetch requests. 
 In modern computing systems, the widening gap between processor speed and memory access latency creates a critical performance bottleneck, with hardware prefetching emerging as an essential technique to hide memory latency. While recent machine learning-based prefetchers like Pythia have shown promise by leveraging reinforcement learning (RL), they often struggle with dynamic workloads exhibiting irregular access patterns or phase transitions.
@@ -78,7 +78,7 @@ The infrastructure has been tested with the following system configuration:
     source setvars.sh
     ```
 
-## Preparing Traces
+## Preparing the Traces
 
 > [Update: Dec 18, 2024] The trace will be downloaded in two phases: (1) all traces, except Ligra and PARSEC workloads, will be downloaded using the automated script, and (2) the Ligra and PARSEC traces needs to be downloaded manually from Zenodo repository mentioned below. 
 
