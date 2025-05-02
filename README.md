@@ -78,7 +78,7 @@ The infrastructure has been tested with the following system configuration:
     source setvars.sh
     ```
 
-## Preparing Traces
+## Preparing the Traces
 
 > [Update: Dec 18, 2024] The trace will be downloaded in two phases: (1) all traces, except Ligra and PARSEC workloads, will be downloaded using the automated script, and (2) the Ligra and PARSEC traces needs to be downloaded manually from Zenodo repository mentioned below. 
 
