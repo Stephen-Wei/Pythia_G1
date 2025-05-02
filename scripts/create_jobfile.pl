@@ -98,7 +98,8 @@ foreach $trace (@trace_info)
 		my $cmdline;
 		if($local)
 		{
-			$cmdline = "$exe $exp_knobs $trace_knobs -traces $trace_input > ${trace_name}_${exp_name}.out 2>&1";
+			#$cmdline = "$exe $exp_knobs $trace_knobs -traces $trace_input > ${trace_name}_${exp_name}.out 2>&1";
+			$cmdline = "$exe $exp_knobs $trace_knobs --traceName $trace_name -traces $trace_input > ${trace_name}_${exp_name}.out 2>&1";
 		}
 		else
 		{
@@ -116,7 +117,8 @@ foreach $trace (@trace_info)
 				$slurm_cmd = $slurm_cmd." $extra";
 			}
 			$slurm_cmd = $slurm_cmd." -c $ncores -J ${trace_name}_${exp_name} -o ${trace_name}_${exp_name}.out -e ${trace_name}_${exp_name}.err";
-			$cmdline = "$slurm_cmd $ENV{'PYTHIA_HOME'}/wrapper.sh $exe \"$exp_knobs $trace_knobs -traces $trace_input\"";
+			#$cmdline = "$slurm_cmd $ENV{'PYTHIA_HOME'}/wrapper.sh $exe \"$exp_knobs $trace_knobs -traces $trace_input\"";
+			$cmdline = "$slurm_cmd $ENV{'PYTHIA_HOME'}/wrapper.sh $exe \"--traceName $trace_name $exp_knobs $trace_knobs -traces $trace_input\"";
 		}
 		
 		# Additional hook replace

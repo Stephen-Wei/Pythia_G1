@@ -1,6 +1,7 @@
 #include <algorithm>
 #include "cache.h"
 #include "set.h"
+#include "stats.h"
 
 uint64_t l2pf_access = 0;
 
@@ -129,7 +130,11 @@ void CACHE::handle_fill()
             // COLLECT STATS
             sim_miss[fill_cpu][MSHR.entry[mshr_index].type]++;
             sim_access[fill_cpu][MSHR.entry[mshr_index].type]++;
-
+            // [START] 更新全局 LLC 统计（bypass 情况下视为一次 miss）
+            if (cache_type == IS_LLC) {
+                llc_total_miss++;
+                llc_total_access++;
+            }
             // check fill level
             if (MSHR.entry[mshr_index].fill_level < fill_level) 
             {
@@ -235,7 +240,12 @@ void CACHE::handle_fill()
             // COLLECT STATS
             sim_miss[fill_cpu][MSHR.entry[mshr_index].type]++;
             sim_access[fill_cpu][MSHR.entry[mshr_index].type]++;
-
+            // [START] 更新全局 LLC 统计（正常填充情况）
+            if (cache_type == IS_LLC) {
+                llc_total_miss++;
+                llc_total_access++;
+            }
+            // [END]
             fill_cache(set, way, &MSHR.entry[mshr_index]);
 
             // RFO marks cache line dirty
@@ -581,6 +591,11 @@ void CACHE::handle_read()
             
             if (way >= 0)  // read hit
             {
+                // [START] 如果是 LLC 读命中，更新全局访问计数
+                if (cache_type == IS_LLC) {
+                    llc_total_access++;
+                }
+                // [END]
                 if (cache_type == IS_ITLB) 
                 {
                     RQ.entry[index].instruction_pa = block[set][way].data;
@@ -661,6 +676,11 @@ void CACHE::handle_read()
             }
             else  // read miss
             { 
+                // [START] 如果是 LLC 读未命中，更新全局统计
+                if (cache_type == IS_LLC) {
+                    llc_total_miss++;
+                    llc_total_access++;
+                }
                 DP ( if (warmup_complete[read_cpu]) {
                 cout << "[" << NAME << "] " << __func__ << " read miss";
                 cout << " instr_id: " << RQ.entry[index].instr_id << " address: " << hex << RQ.entry[index].address;
