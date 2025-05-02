@@ -12,34 +12,34 @@ namespace knob
 {
 	uint64_t warmup_instructions = 1000000;
 	uint64_t simulation_instructions = 1000000;
-	bool  	 knob_cloudsuite = false;
-	bool     knob_low_bandwidth = false;
-	vector<string> 	 l2c_prefetcher_types;
-	vector<string> 	 l1d_prefetcher_types;
-	bool     l1d_perfect = false;
-	bool     l2c_perfect = false;
-	bool     llc_perfect = false;
-	bool     l1d_semi_perfect = false;
-	bool     l2c_semi_perfect = false;
-	bool     llc_semi_perfect = false;
+	bool knob_cloudsuite = false;
+	bool knob_low_bandwidth = false;
+	vector<string> l2c_prefetcher_types;
+	vector<string> l1d_prefetcher_types;
+	bool l1d_perfect = false;
+	bool l2c_perfect = false;
+	bool llc_perfect = false;
+	bool l1d_semi_perfect = false;
+	bool l2c_semi_perfect = false;
+	bool llc_semi_perfect = false;
 	uint32_t semi_perfect_cache_page_buffer_size = 64;
-	bool     measure_ipc = false;
+	bool measure_ipc = false;
 	uint64_t measure_ipc_epoch = 1000;
 	uint32_t dram_io_freq = 2400;
-	bool     measure_dram_bw = true;
+	bool measure_dram_bw = true;
 	uint64_t measure_dram_bw_epoch = 256;
-	bool     measure_cache_acc = true;
+	bool measure_cache_acc = true;
 	uint64_t measure_cache_acc_epoch = 1024;
 
 	/* next-line */
-	vector<int32_t>  next_line_deltas;
-	vector<float>  next_line_delta_prob;
+	vector<int32_t> next_line_deltas;
+	vector<float> next_line_delta_prob;
 	uint32_t next_line_seed = 255;
 	uint32_t next_line_pt_size = 256;
-	bool     next_line_enable_prefetch_tracking = true;
-	bool     next_line_enable_trace = false;
+	bool next_line_enable_prefetch_tracking = true;
+	bool next_line_enable_trace = false;
 	uint32_t next_line_trace_interval = 5;
-	string   next_line_trace_name = string("next_line_trace.csv");
+	string next_line_trace_name = string("next_line_trace.csv");
 	uint32_t next_line_pref_degree = 1;
 
 	/* SMS */
@@ -50,24 +50,24 @@ namespace knob
 	uint32_t sms_pref_degree = 4;
 	uint32_t sms_region_size = 2048;
 	uint32_t sms_region_size_log = 11;
-	bool     sms_enable_pref_buffer = true;
+	bool sms_enable_pref_buffer = true;
 	uint32_t sms_pref_buffer_size = 256;
 
 	/* SPP */
 	uint32_t spp_st_size = 256;
 	uint32_t spp_pt_size = 512;
 	uint32_t spp_max_outcomes = 4;
-	double   spp_max_confidence = 25.0;
+	double spp_max_confidence = 25.0;
 	uint32_t spp_max_depth = 64;
 	uint32_t spp_max_prefetch_per_level = 1;
 	uint32_t spp_max_confidence_counter_value = 16;
 	uint32_t spp_max_global_counter_value = 1024;
 	uint32_t spp_pf_size = 1024;
-	bool     spp_enable_alpha = true;
-	bool     spp_enable_pref_buffer = true;
+	bool spp_enable_alpha = true;
+	bool spp_enable_pref_buffer = true;
 	uint32_t spp_pref_buffer_size = 256;
 	uint32_t spp_pref_degree = 4;
-	bool     spp_enable_ghr = true;
+	bool spp_enable_ghr = true;
 	uint32_t spp_ghr_size = 8;
 	uint32_t spp_signature_bits = 12;
 	uint32_t spp_alpha_epoch = 1024;
@@ -81,14 +81,14 @@ namespace knob
 	uint32_t bop_max_rounds = 100;
 	uint32_t bop_max_score = 31;
 	uint32_t bop_top_n = 1;
-	bool     bop_enable_pref_buffer = false;
+	bool bop_enable_pref_buffer = false;
 	uint32_t bop_pref_buffer_size = 256;
 	uint32_t bop_pref_degree = 4;
 	uint32_t bop_rr_size = 256;
 
 	/* Sandbox */
 	uint32_t sandbox_pref_degree = 4;
-	bool     sandbox_enable_stream_detect = false;
+	bool sandbox_enable_stream_detect = false;
 	uint32_t sandbox_stream_detect_length = 4;
 	uint32_t sandbox_num_access_in_phase = 256;
 	uint32_t sandbox_num_cycle_offsets = 4;
@@ -110,7 +110,7 @@ namespace knob
 	uint32_t dspatch_measure_accP_max;
 	uint32_t dspatch_acc_thr;
 	uint32_t dspatch_cov_thr;
-	bool     dspatch_enable_pref_buffer;
+	bool dspatch_enable_pref_buffer;
 	uint32_t dspatch_pref_buffer_size;
 	uint32_t dspatch_pref_degree;
 
@@ -121,10 +121,10 @@ namespace knob
 	/* MLOP */
 	uint32_t mlop_pref_degree;
 	uint32_t mlop_num_updates;
-	float 	mlop_l1d_thresh;
-	float 	mlop_l2c_thresh;
-	float 	mlop_llc_thresh;
-	uint32_t	mlop_debug_level;
+	float mlop_l1d_thresh;
+	float mlop_l2c_thresh;
+	float mlop_llc_thresh;
+	uint32_t mlop_debug_level;
 
 	/* Bingo */
 	uint32_t bingo_region_size = 2048;
@@ -138,14 +138,14 @@ namespace knob
 	uint32_t bingo_pht_ways = 16;
 	uint32_t bingo_pf_streamer_size = 128;
 	uint32_t bingo_debug_level = 0;
-	float    bingo_l1d_thresh;
-	float    bingo_l2c_thresh;
-	float    bingo_llc_thresh;
-	string   bingo_pc_address_fill_level;
+	float bingo_l1d_thresh;
+	float bingo_l2c_thresh;
+	float bingo_llc_thresh;
+	string bingo_pc_address_fill_level;
 
 	/* Stride */
 	uint32_t stride_num_trackers = 64;
-   	uint32_t stride_pref_degree = 2;
+	uint32_t stride_pref_degree = 2;
 
 	/* Streamer */
 	uint32_t streamer_num_trackers = 64;
@@ -156,7 +156,7 @@ namespace knob
 	uint32_t ampm_pred_degree = 4;
 	uint32_t ampm_pref_degree = 4;
 	uint32_t ampm_pref_buffer_size = 256;
-	bool	 ampm_enable_pref_buffer = false;
+	bool ampm_enable_pref_buffer = false;
 	uint32_t ampm_max_delta = 16;
 
 	/* Context Prefetcher */
@@ -172,45 +172,45 @@ namespace knob
 	uint32_t power7_default_streamer_degree = 4;
 
 	/* Scooby */
-	float    scooby_alpha = 0.0065;
-	float    scooby_gamma = 0.55;
-	float    scooby_epsilon = 0.002;
+	float scooby_alpha = 0.0065;
+	float scooby_gamma = 0.55;
+	float scooby_epsilon = 0.002;
 	uint32_t scooby_state_num_bits = 10;
 	uint32_t scooby_max_states = 1024;
 	uint32_t scooby_seed = 200;
-	string   scooby_policy = std::string("EGreedy");
-	string   scooby_learning_type = std::string("SARSA");
+	string scooby_policy = std::string("EGreedy");
+	string scooby_learning_type = std::string("SARSA");
 	vector<int32_t> scooby_actions;
 	uint32_t scooby_max_actions = 64;
 	uint32_t scooby_pt_size = 256;
 	uint32_t scooby_st_size = 64;
-	int32_t  scooby_reward_none = -4;
-	int32_t  scooby_reward_incorrect = -8;
-	int32_t  scooby_reward_correct_untimely = 12;
-	int32_t  scooby_reward_correct_timely = 20;
+	int32_t scooby_reward_none = -4;
+	int32_t scooby_reward_incorrect = -8;
+	int32_t scooby_reward_correct_untimely = 12;
+	int32_t scooby_reward_correct_timely = 20;
 	uint32_t scooby_max_pcs = 5;
 	uint32_t scooby_max_offsets = 5;
 	uint32_t scooby_max_deltas = 5;
-	bool     scooby_brain_zero_init = false;
-	bool     scooby_enable_reward_all = false;
-	bool     scooby_enable_track_multiple = false;
-	bool     scooby_enable_reward_out_of_bounds = true;
-	int32_t  scooby_reward_out_of_bounds = -12;
+	bool scooby_brain_zero_init = false;
+	bool scooby_enable_reward_all = false;
+	bool scooby_enable_track_multiple = false;
+	bool scooby_enable_reward_out_of_bounds = true;
+	int32_t scooby_reward_out_of_bounds = -12;
 	uint32_t scooby_state_type = 1;
-	bool     scooby_access_debug = false;
-	bool     scooby_print_access_debug = false;
+	bool scooby_access_debug = false;
+	bool scooby_print_access_debug = false;
 	uint64_t scooby_print_access_debug_pc = 0xdeadbeef;
 	uint32_t scooby_print_access_debug_pc_count = 0;
-	bool     scooby_print_trace = false;
-	bool     scooby_enable_state_action_stats = false;
-	bool     scooby_enable_reward_tracker_hit = false;
-	int32_t  scooby_reward_tracker_hit = -2;
-	bool     scooby_enable_shaggy = false;
+	bool scooby_print_trace = false;
+	bool scooby_enable_state_action_stats = false;
+	bool scooby_enable_reward_tracker_hit = false;
+	int32_t scooby_reward_tracker_hit = -2;
+	bool scooby_enable_shaggy = false;
 	uint32_t scooby_state_hash_type = 11;
-	bool     scooby_prefetch_with_shaggy = false;
-	bool     scooby_enable_featurewise_engine = true;
+	bool scooby_prefetch_with_shaggy = false;
+	bool scooby_enable_featurewise_engine = true;
 	uint32_t scooby_pref_degree = 1; /* default is set to 1 */
-	bool     scooby_enable_dyn_degree = true;
+	bool scooby_enable_dyn_degree = true;
 	vector<float> scooby_max_to_avg_q_thresholds; /* depricated */
 	vector<int32_t> scooby_dyn_degrees;
 	uint64_t scooby_early_exploration_window = 0;
@@ -219,28 +219,36 @@ namespace knob
 	vector<int32_t> scooby_dyn_degrees_type2;
 	uint32_t scooby_action_tracker_size = 2;
 	uint32_t scooby_high_bw_thresh = 4;
-	bool     scooby_enable_hbw_reward = true;
-	int32_t  scooby_reward_hbw_correct_timely = 20;
-	int32_t  scooby_reward_hbw_correct_untimely = 12;
-	int32_t  scooby_reward_hbw_incorrect = -14;
-	int32_t  scooby_reward_hbw_none = -2;
-	int32_t  scooby_reward_hbw_out_of_bounds = -12;
-	int32_t  scooby_reward_hbw_tracker_hit = -2;
+	bool scooby_enable_hbw_reward = true;
+	int32_t scooby_reward_hbw_correct_timely = 20;
+	int32_t scooby_reward_hbw_correct_untimely = 12;
+	int32_t scooby_reward_hbw_incorrect = -14;
+	int32_t scooby_reward_hbw_none = -2;
+	int32_t scooby_reward_hbw_out_of_bounds = -12;
+	int32_t scooby_reward_hbw_tracker_hit = -2;
 	vector<int32_t> scooby_last_pref_offset_conf_thresholds_hbw;
 	vector<int32_t> scooby_dyn_degrees_type2_hbw;
 
+	// ---------------------------
+	// 新增：错误跟踪与相位变化检测相关的配置
+	// ---------------------------
+	uint32_t scooby_error_fifo_size = 3000; // 最近错误 FIFO 的大小
+	float scooby_error_ewma_alpha = 0.01;	// EWMA 更新的平滑系数
+	float scooby_phase_change_thresh = 0.3; // 相位变化检测阈值（30%）
+	std::string trace_name = "default_trace";
+
 	/* Learning Engine */
-	bool     le_enable_trace;
+	bool le_enable_trace;
 	uint32_t le_trace_interval;
-	string   le_trace_file_name;
+	string le_trace_file_name;
 	uint32_t le_trace_state;
-	bool     le_enable_score_plot;
+	bool le_enable_score_plot;
 	vector<int32_t> le_plot_actions;
-	string   le_plot_file_name;
-	bool     le_enable_action_trace;
+	string le_plot_file_name;
+	bool le_enable_action_trace;
 	uint32_t le_action_trace_interval;
 	std::string le_action_trace_name;
-	bool     le_enable_action_plot;
+	bool le_enable_action_plot;
 
 	/* Featurewise Learning Engine */
 	vector<int32_t> le_featurewise_active_features;
@@ -260,28 +268,45 @@ namespace knob
 	uint32_t le_featurewise_bw_acc_check_level = 1;
 	uint32_t le_featurewise_acc_thresh = 2;
 
-	bool 			le_featurewise_enable_trace = false;
-	uint32_t		le_featurewise_trace_feature_type;
-	string 			le_featurewise_trace_feature;
-	uint32_t 		le_featurewise_trace_interval;
-	uint32_t 		le_featurewise_trace_record_count;
-	std::string 	le_featurewise_trace_file_name;
-	bool 			le_featurewise_enable_score_plot;
+	bool le_featurewise_enable_trace = false;
+	uint32_t le_featurewise_trace_feature_type;
+	string le_featurewise_trace_feature;
+	uint32_t le_featurewise_trace_interval;
+	uint32_t le_featurewise_trace_record_count;
+	std::string le_featurewise_trace_file_name;
+	bool le_featurewise_enable_score_plot;
 	vector<int32_t> le_featurewise_plot_actions;
-	std::string 	le_featurewise_plot_file_name;
-	bool 			le_featurewise_remove_plot_script;
+	std::string le_featurewise_plot_file_name;
+	bool le_featurewise_remove_plot_script;
 }
 
 void parse_args(int argc, char *argv[])
 {
-	for(int index = 0; index < argc; ++index)
+	for (int index = 0; index < argc; ++index)
 	{
 		string arg = string(argv[index]);
-		if(arg.compare(0, 2, "--") == 0)
+		// 1) 若检测到正好是 "--traceName"
+		if (arg == "--traceName")
+		{
+			// 确保下一个参数存在才是 trace name
+			if ((index + 1) < argc)
+			{
+				knob::trace_name = std::string(argv[index + 1]);
+				index++; // 跳过下一个
+				continue;
+			}
+			else
+			{
+				printf("error: --traceName requires a parameter\n");
+				exit(1);
+			}
+		}
+
+		if (arg.compare(0, 2, "--") == 0)
 		{
 			arg = arg.substr(2);
 		}
-		if(ini_parse_string(arg.c_str(), handler, NULL) < 0)
+		if (ini_parse_string(arg.c_str(), handler, NULL) < 0)
 		{
 			printf("error parsing commandline %s\n", argv[index]);
 			exit(1);
@@ -289,11 +314,11 @@ void parse_args(int argc, char *argv[])
 	}
 }
 
-int handler(void* user, const char* section, const char* name, const char* value)
+int handler(void *user, const char *section, const char *name, const char *value)
 {
 	char config_file_name[MAX_LEN];
 
-	if(MATCH("", "config"))
+	if (MATCH("", "config"))
 	{
 		strcpy(config_file_name, value);
 		parse_config(config_file_name);
@@ -310,170 +335,170 @@ void parse_config(char *config_file_name)
 	cout << "parsing config file: " << string(config_file_name) << endl;
 	if (ini_parse(config_file_name, parse_knobs, NULL) < 0)
 	{
-        printf("Failed to load %s\n", config_file_name);
-        exit(1);
-    }
+		printf("Failed to load %s\n", config_file_name);
+		exit(1);
+	}
 }
 
-int parse_knobs(void* user, const char* section, const char* name, const char* value)
+int parse_knobs(void *user, const char *section, const char *name, const char *value)
 {
 	char config_file_name[MAX_LEN];
 
-	if(MATCH("", "config"))
+	if (MATCH("", "config"))
 	{
 		strcpy(config_file_name, value);
 		parse_config(config_file_name);
 	}
-    else if (MATCH("", "warmup_instructions"))
-    {
+	else if (MATCH("", "warmup_instructions"))
+	{
 		knob::warmup_instructions = atol(value);
-    }
-    else if (MATCH("", "simulation_instructions"))
-    {
+	}
+	else if (MATCH("", "simulation_instructions"))
+	{
 		knob::simulation_instructions = atol(value);
-    }
-    else if (MATCH("", "knob_cloudsuite"))
-    {
+	}
+	else if (MATCH("", "knob_cloudsuite"))
+	{
 		knob::knob_cloudsuite = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "knob_low_bandwidth"))
-    {
+	}
+	else if (MATCH("", "knob_low_bandwidth"))
+	{
 		knob::knob_low_bandwidth = atoi(value);
-    }
-    else if (MATCH("", "l2c_prefetcher_types"))
-    {
+	}
+	else if (MATCH("", "l2c_prefetcher_types"))
+	{
 		knob::l2c_prefetcher_types.push_back(string(value));
-    }
-    else if (MATCH("", "l1d_prefetcher_types"))
-    {
+	}
+	else if (MATCH("", "l1d_prefetcher_types"))
+	{
 		knob::l1d_prefetcher_types.push_back(string(value));
-    }
-    else if (MATCH("", "l1d_perfect"))
-    {
+	}
+	else if (MATCH("", "l1d_perfect"))
+	{
 		knob::l1d_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "l2c_perfect"))
-    {
+	}
+	else if (MATCH("", "l2c_perfect"))
+	{
 		knob::l2c_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "llc_perfect"))
-    {
+	}
+	else if (MATCH("", "llc_perfect"))
+	{
 		knob::llc_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "l1d_semi_perfect"))
-    {
+	}
+	else if (MATCH("", "l1d_semi_perfect"))
+	{
 		knob::l1d_semi_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "l2c_semi_perfect"))
-    {
+	}
+	else if (MATCH("", "l2c_semi_perfect"))
+	{
 		knob::l2c_semi_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "llc_semi_perfect"))
-    {
+	}
+	else if (MATCH("", "llc_semi_perfect"))
+	{
 		knob::llc_semi_perfect = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "semi_perfect_cache_page_buffer_size"))
-    {
+	}
+	else if (MATCH("", "semi_perfect_cache_page_buffer_size"))
+	{
 		knob::semi_perfect_cache_page_buffer_size = atoi(value);
-    }
-    else if (MATCH("", "measure_ipc"))
-    {
+	}
+	else if (MATCH("", "measure_ipc"))
+	{
 		knob::measure_ipc = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "measure_ipc_epoch"))
-    {
+	}
+	else if (MATCH("", "measure_ipc_epoch"))
+	{
 		knob::measure_ipc_epoch = atoi(value);
-    }
-    else if (MATCH("", "dram_io_freq"))
-    {
+	}
+	else if (MATCH("", "dram_io_freq"))
+	{
 		knob::dram_io_freq = atoi(value);
-    }
-    else if (MATCH("", "measure_dram_bw"))
-    {
+	}
+	else if (MATCH("", "measure_dram_bw"))
+	{
 		knob::measure_dram_bw = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "measure_dram_bw_epoch"))
-    {
+	}
+	else if (MATCH("", "measure_dram_bw_epoch"))
+	{
 		knob::measure_dram_bw_epoch = atoi(value);
-    }
-    else if (MATCH("", "measure_cache_acc"))
-    {
+	}
+	else if (MATCH("", "measure_cache_acc"))
+	{
 		knob::measure_cache_acc = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "measure_cache_acc_epoch"))
-    {
+	}
+	else if (MATCH("", "measure_cache_acc_epoch"))
+	{
 		knob::measure_cache_acc_epoch = atoi(value);
-    }
+	}
 
-    /* next-line */
-    else if (MATCH("", "next_line_deltas"))
-    {
+	/* next-line */
+	else if (MATCH("", "next_line_deltas"))
+	{
 		knob::next_line_deltas = get_array_int(value);
-    }
-    else if (MATCH("", "next_line_delta_prob"))
-    {
+	}
+	else if (MATCH("", "next_line_delta_prob"))
+	{
 		knob::next_line_delta_prob = get_array_float(value);
-    }
-    else if (MATCH("", "next_line_seed"))
-    {
+	}
+	else if (MATCH("", "next_line_seed"))
+	{
 		knob::next_line_seed = atoi(value);
-    }
-    else if (MATCH("", "next_line_pt_size"))
-    {
+	}
+	else if (MATCH("", "next_line_pt_size"))
+	{
 		knob::next_line_pt_size = atoi(value);
-    }
-    else if (MATCH("", "next_line_enable_prefetch_tracking"))
-    {
+	}
+	else if (MATCH("", "next_line_enable_prefetch_tracking"))
+	{
 		knob::next_line_enable_prefetch_tracking = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "next_line_enable_trace"))
-    {
+	}
+	else if (MATCH("", "next_line_enable_trace"))
+	{
 		knob::next_line_enable_trace = !strcmp(value, "true") ? true : false;
-    }
-    else if (MATCH("", "next_line_trace_interval"))
-    {
+	}
+	else if (MATCH("", "next_line_trace_interval"))
+	{
 		knob::next_line_trace_interval = atoi(value);
-    }
-    else if (MATCH("", "next_line_trace_name"))
-    {
+	}
+	else if (MATCH("", "next_line_trace_name"))
+	{
 		knob::next_line_trace_name = string(value);
-    }
-    else if (MATCH("", "next_line_pref_degree"))
-    {
+	}
+	else if (MATCH("", "next_line_pref_degree"))
+	{
 		knob::next_line_pref_degree = atoi(value);
-    }
+	}
 
-    /* SMS */
-	else if(MATCH("", "sms_at_size"))
+	/* SMS */
+	else if (MATCH("", "sms_at_size"))
 	{
 		knob::sms_at_size = atoi(value);
 	}
-	else if(MATCH("", "sms_ft_size"))
+	else if (MATCH("", "sms_ft_size"))
 	{
 		knob::sms_ft_size = atoi(value);
 	}
-	else if(MATCH("", "sms_pht_size"))
+	else if (MATCH("", "sms_pht_size"))
 	{
 		knob::sms_pht_size = atoi(value);
 	}
-	else if(MATCH("", "sms_pht_assoc"))
+	else if (MATCH("", "sms_pht_assoc"))
 	{
 		knob::sms_pht_assoc = atoi(value);
 	}
-	else if(MATCH("", "sms_pref_degree"))
+	else if (MATCH("", "sms_pref_degree"))
 	{
 		knob::sms_pref_degree = atoi(value);
 	}
-	else if(MATCH("", "sms_region_size"))
+	else if (MATCH("", "sms_region_size"))
 	{
 		knob::sms_region_size = atoi(value);
 		knob::sms_region_size_log = log2(knob::sms_region_size);
 	}
-	else if(MATCH("", "sms_enable_pref_buffer"))
+	else if (MATCH("", "sms_enable_pref_buffer"))
 	{
 		knob::sms_enable_pref_buffer = !strcmp(value, "true") ? true : false;
 	}
-	else if(MATCH("", "sms_pref_buffer_size"))
+	else if (MATCH("", "sms_pref_buffer_size"))
 	{
 		knob::sms_pref_buffer_size = atoi(value);
 	}
@@ -728,63 +753,63 @@ int parse_knobs(void* user, const char* section, const char* name, const char* v
 	/* Bingo */
 	else if (MATCH("", "bingo_region_size"))
 	{
-	   knob::bingo_region_size = atoi(value);
+		knob::bingo_region_size = atoi(value);
 	}
 	else if (MATCH("", "bingo_pattern_len"))
 	{
-	   knob::bingo_pattern_len = atoi(value);
+		knob::bingo_pattern_len = atoi(value);
 	}
 	else if (MATCH("", "bingo_pc_width"))
 	{
-	   knob::bingo_pc_width = atoi(value);
+		knob::bingo_pc_width = atoi(value);
 	}
 	else if (MATCH("", "bingo_min_addr_width"))
 	{
-	   knob::bingo_min_addr_width = atoi(value);
+		knob::bingo_min_addr_width = atoi(value);
 	}
 	else if (MATCH("", "bingo_max_addr_width"))
 	{
-	   knob::bingo_max_addr_width = atoi(value);
+		knob::bingo_max_addr_width = atoi(value);
 	}
 	else if (MATCH("", "bingo_ft_size"))
 	{
-	   knob::bingo_ft_size = atoi(value);
+		knob::bingo_ft_size = atoi(value);
 	}
 	else if (MATCH("", "bingo_at_size"))
 	{
-	   knob::bingo_at_size = atoi(value);
+		knob::bingo_at_size = atoi(value);
 	}
 	else if (MATCH("", "bingo_pht_size"))
 	{
-	   knob::bingo_pht_size = atoi(value);
+		knob::bingo_pht_size = atoi(value);
 	}
 	else if (MATCH("", "bingo_pht_ways"))
 	{
-	   knob::bingo_pht_ways = atoi(value);
+		knob::bingo_pht_ways = atoi(value);
 	}
 	else if (MATCH("", "bingo_pf_streamer_size"))
 	{
-	   knob::bingo_pf_streamer_size = atoi(value);
+		knob::bingo_pf_streamer_size = atoi(value);
 	}
 	else if (MATCH("", "bingo_debug_level"))
 	{
-	   knob::bingo_debug_level = atoi(value);
+		knob::bingo_debug_level = atoi(value);
 	}
 	else if (MATCH("", "bingo_l1d_thresh"))
 	{
-	   knob::bingo_l1d_thresh = atof(value);
+		knob::bingo_l1d_thresh = atof(value);
 	}
 	else if (MATCH("", "bingo_l2c_thresh"))
 	{
-	   knob::bingo_l2c_thresh = atof(value);
+		knob::bingo_l2c_thresh = atof(value);
 	}
 	else if (MATCH("", "bingo_llc_thresh"))
 	{
-	   knob::bingo_llc_thresh = atof(value);
+		knob::bingo_llc_thresh = atof(value);
 	}
 	else if (MATCH("", "bingo_pc_address_fill_level"))
 	{
-	   knob::bingo_pc_address_fill_level = string(value);
+		knob::bingo_pc_address_fill_level = string(value);
 	}
 
 	/* Stride Prefetcher */
@@ -1201,51 +1226,51 @@ int parse_knobs(void* user, const char* section, const char* name, const char* v
 	}
 	else if (MATCH("", "le_featurewise_enable_trace"))
 	{
-	   knob::le_featurewise_enable_trace = !strcmp(value, "true") ? true : false;
+		knob::le_featurewise_enable_trace = !strcmp(value, "true") ? true : false;
 	}
 	else if (MATCH("", "le_featurewise_trace_feature_type"))
 	{
-	   knob::le_featurewise_trace_feature_type = atoi(value);
+		knob::le_featurewise_trace_feature_type = atoi(value);
 	}
 	else if (MATCH("", "le_featurewise_trace_feature"))
 	{
-	   knob::le_featurewise_trace_feature = string(value);
+		knob::le_featurewise_trace_feature = string(value);
 	}
 	else if (MATCH("", "le_featurewise_trace_interval"))
 	{
-	   knob::le_featurewise_trace_interval = atoi(value);
+		knob::le_featurewise_trace_interval = atoi(value);
 	}
 	else if (MATCH("", "le_featurewise_trace_record_count"))
 	{
-	   knob::le_featurewise_trace_record_count = atoi(value);
+		knob::le_featurewise_trace_record_count = atoi(value);
 	}
 	else if (MATCH("", "le_featurewise_trace_file_name"))
 	{
-	   knob::le_featurewise_trace_file_name = string(value);
+		knob::le_featurewise_trace_file_name = string(value);
 	}
 	else if (MATCH("", "le_featurewise_enable_score_plot"))
 	{
-	   knob::le_featurewise_enable_score_plot = !strcmp(value, "true") ? true : false;
+		knob::le_featurewise_enable_score_plot = !strcmp(value, "true") ? true : false;
 	}
 	else if (MATCH("", "le_featurewise_plot_actions"))
 	{
-	   knob::le_featurewise_plot_actions = get_array_int(value);
+		knob::le_featurewise_plot_actions = get_array_int(value);
 	}
 	else if (MATCH("", "le_featurewise_plot_file_name"))
 	{
-	   knob::le_featurewise_plot_file_name = string(value);
+		knob::le_featurewise_plot_file_name = string(value);
 	}
 	else if (MATCH("", "le_featurewise_remove_plot_script"))
 	{
-	   knob::le_featurewise_remove_plot_script = !strcmp(value, "true") ? true : false;
+		knob::le_featurewise_remove_plot_script = !strcmp(value, "true") ? true : false;
 	}
 
-    else
-    {
-    	printf("unable to parse section: %s, name: %s, value: %s\n", section, name, value);
-        return 0;
-    }
-    return 1;
+	else
+	{
+		printf("unable to parse section: %s, name: %s, value: %s\n", section, name, value);
+		return 0;
+	}
+	return 1;
 }
 
 std::vector<int32_t> get_array_int(const char *str)
@@ -1253,7 +1278,7 @@ std::vector<int32_t> get_array_int(const char *str)
 	std::vector<int32_t> value;
 	char *tmp_str = strdup(str);
 	char *pch = strtok(tmp_str, ",");
-	while(pch)
+	while (pch)
 	{
 		value.push_back(strtol(pch, NULL, 0));
 		pch = strtok(NULL, ",");
@@ -1267,7 +1292,7 @@ std::vector<float> get_array_float(const char *str)
 	std::vector<float> value;
 	char *tmp_str = strdup(str);
 	char *pch = strtok(tmp_str, ",");
-	while(pch)
+	while (pch)
 	{
 		value.push_back(atof(pch));
 		pch = strtok(NULL, ",");
